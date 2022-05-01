@@ -1,0 +1,6 @@
+// MVC: separate the  application data from and business from the presentation.
+
+// The controller mediates between the model and view. We deal with user requests for resources from the server. 
+    We create different functions that send the resources to the user.  
+
+// Inside the model folder we work with mongoDB perform the data validation, processing data creating scheme etc. 

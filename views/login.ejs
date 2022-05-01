@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <title>Document</title>
+    </head>
+    <body class="align">
+        <div id="error">
+
+        </div>
+        <!--include header-->
+        <%- include('login_include/_svg') %>
+            <!--/include header-->
+            <div class="grid">
+                <h1 style="width:100%; text-align:center;">COS Dashboard</h1>
+                <form action="/login" method="POST" class="form
+                    login">
+
+                    <div class="form__field">
+                        <label for="username"><svg class="icon">
+                                <use xlink:href="#icon-user"></use>
+                            </svg><span class="hidden">Username</span></label>
+                        <input
+                            type="text" name="username"
+                            class="form__input"
+                            placeholder="Username" required>
+                    </div>
+
+
+                    <div class="form__field">
+                        <label for="password"><svg class="icon">
+                                <use xlink:href="#icon-lock"></use>
+                            </svg><span class="hidden">Password</span></label>
+                        <input type="password"
+                            name="password" class="form__input"
+                            placeholder="Password" required>
+                    </div>
+
+                    <div class="form__field">
+                        <input type="submit" value="login">
+                    </div>
+
+                </form>
+
+                <p class="text--center">Not a member? <a
+                        href="/signup">Sign up</a>
+                    <svg class="icon">
+                        <use xlink:href="#icon-arrow-right"></use>
+                    </svg></p>
+
+
+            </div>
+            <script
+                src="https://code.jquery.com/jquery-3.6.0.js"
+                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+            <% if(error) { %><script>
+                    var x = document.getElementById("error");
+                    x.insertAdjacentHTML("beforeend", '<div id="toast" class="toast__container"> <div class="toast__cell"> <div class="toast toast--green"> <div class="toast__icon"> <svg version="1.1" class="toast__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> <g><g><path d="M504.502,75.496c-9.997-9.998-26.205-9.998-36.204,0L161.594,382.203L43.702,264.311c-9.997-9.998-26.205-9.997-36.204,0 c-9.998,9.997-9.998,26.205,0,36.203l135.994,135.992c9.994,9.997,26.214,9.99,36.204,0L504.502,111.7 C514.5,101.703,514.499,85.494,504.502,75.496z"></path> </g></g> </svg> </div> <div class="toast__content"> <p class="toast__type">Invalid Username/Password</p> <p class="toast__message">Please make sure your username/password is correct</p> </div> <div class="toast__close"> <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15.642 15.642" xmlns:xlink="http://www.w3.org/1999/xlink" enable-background="new 0 0 15.642 15.642"> <path fill-rule="evenodd" d="M8.882,7.821l6.541-6.541c0.293-0.293,0.293-0.768,0-1.061 c-0.293-0.293-0.768-0.293-1.061,0L7.821,6.76L1.28,0.22c-0.293-0.293-0.768-0.293-1.061,0c-0.293,0.293-0.293,0.768,0,1.061 l6.541,6.541L0.22,14.362c-0.293,0.293-0.293,0.768,0,1.061c0.147,0.146,0.338,0.22,0.53,0.22s0.384-0.073,0.53-0.22l6.541-6.541 l6.541,6.541c0.147,0.146,0.338,0.22,0.53,0.22c0.192,0,0.384-0.073,0.53-0.22c0.293-0.293,0.293-0.768,0-1.061L8.882,7.821z"></path> </svg> </div> </div> </div> </div>')
+                    x.className = "show";
+                    setTimeout(function(){ x.remove() }, 7000);
+                </script>
+                <% } %>
+
+                    <script src="js/login.js"></script>
+
+                </body>
+
+            </html>

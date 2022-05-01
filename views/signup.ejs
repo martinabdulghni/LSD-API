@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        <title>Document</title>
+    </head>
+    <body class="align">
+        <!--include header-->
+        <%- include('login_include/_svg') %>
+            <!--/include header-->
+            <div class="grid">
+
+
+
+                <form action="/signup" method="POST" class="form login">
+                    <div style="width: 100%; text-align: center" id="error-nwl"></div>
+                    <div class="form__field">
+                        <label for="username"><svg class="icon">
+                                <use xlink:href="#icon-user"></use>
+                            </svg><span class="hidden">Username</span></label>
+                        <input id="username" onkeyup="checkUsername()"
+                            type="text" name="username" class="form__input"
+                            placeholder="Username" required>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="email"><svg class="icon">
+                                <use xlink:href="#icon-wifi"></use>
+                            </svg><span class="hidden">email</span></label>
+                        <input type="email" name="email" class="form__input"
+                            placeholder="Email" required>
+                    </div>
+
+                    <div class="form__field">
+                        <label for="password"><svg class="icon">
+                                <use xlink:href="#icon-lock"></use>
+                            </svg><span class="hidden">Password</span></label>
+                        <input onkeyup="checkPass();" id="pass1" type="password"
+                            name="password" class="form__input"
+                            placeholder="Password" required>
+                    </div>
+                    <div class="form__field">
+                        <label for="passwordRepeat"><svg class="icon">
+                                <use xlink:href="#icon-lock"></use>
+                            </svg><span class="hidden">Password</span></label>
+                        <input onkeyup="checkPass();" id="pass2" type="password"
+                            name="passwordRepeat" class="form__input"
+                            placeholder="Repeat Password" required>
+                    </div>
+                    <div id="error-nwl"></div>
+                    <div class="form__field">
+                        <input style="cursor: default;" id="submitButton"
+                            type="submit" value="Sign up" disabled>
+                    </div>
+
+                </form>
+
+                <p class="text--center">Already a member? <a href="/login">login</a>
+                    <svg class="icon">
+                        <use xlink:href="#icon-arrow-right"></use>
+                    </svg></p>
+
+            </div>
+
+            <script
+                src="https://code.jquery.com/jquery-3.6.0.js"
+                integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="crossorigin="anonymous"></script>
+            
+
+                    
+
+                    
+
+
+                    </body>
+
+                </html>
